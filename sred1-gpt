@@ -1,0 +1,32 @@
+/*	
+User
+	In c++ Write a program that changes access permissions to a particular file, for example by granting or revoking read, write, and execute rights.
+	ChatGPT
+	Certainly! Below is a simple C++ program that changes access permissions to a file using the `chmod()` function from the `<sys/stat.h>` header file.
+	
+	```cpp
+*/	
+#include <iostream>
+	#include <sys/stat.h>
+	
+	int main() {
+		const char *filename = "example.txt"; // Change this to your file's name
+		const mode_t permissions = S_IRUSR | S_IWUSR | S_IXUSR; // Example permissions: Read, Write, Execute for the file owner
+		
+		int result = chmod(filename, permissions);
+		
+		if (result == 0) {
+			std::cout << "Permissions changed successfully.\n";
+		} else {
+			std::cerr << "Error changing permissions.\n";
+		}
+		
+		return 0;
+	}
+	```
+	
+/*
+	Make sure to replace `"example.txt"` with the path of the file you want to change permissions for. Additionally, `S_IRUSR`, `S_IWUSR`, and `S_IXUSR` are symbolic constants representing read, write, and execute permissions for the file owner. You can combine them using bitwise OR (`|`) to set desired permissions. 
+	
+	Compile this program using a C++ compiler and run it with appropriate permissions to modify the file's access permissions.
+*/
