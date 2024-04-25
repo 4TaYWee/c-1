@@ -60,6 +60,7 @@
 		return 0;
 	}
 	
-	
+/*	
 	This approach uses traditional file streams (std::ifstream and std::ofstream) to read from the source file and write to the destination file. It iterates through the source file character by character and writes it to the destination file. This method works for both text and binary files.
 	Both methods achieve the same result of copying a file. The C++17 std::filesystem::copy function is generally preferred for its simplicity and exception handling. The traditional file stream approach offers more control over the copy process but requires more manual error checking.
+*/
